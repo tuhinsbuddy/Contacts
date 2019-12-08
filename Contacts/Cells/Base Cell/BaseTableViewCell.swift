@@ -1,0 +1,26 @@
+//
+//  BaseTableViewCell.swift
+//  Contacts
+//
+//  Created by Tuhin on 08/12/19.
+//  Copyright © 2019 Swift Contacts. All rights reserved.
+//
+
+import UIKit
+
+final class BaseTableViewCell: UITableViewCell {
+    @IBOutlet weak var baseSuperView: UIView!
+    @IBOutlet weak var profileImageSuperView: UIView!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileNameLbl: UILabel!
+    @IBOutlet weak var favouriteSuperView: UIView!
+    @IBOutlet weak var favouriteImageView: UIImageView!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setColors()
+    }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        // Configure the view for the selected state
+    }
+}
