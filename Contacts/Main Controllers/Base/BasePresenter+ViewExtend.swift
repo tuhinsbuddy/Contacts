@@ -13,12 +13,18 @@ extension BasePresenter: BaseInteractorOutputProtocol {
         switch data.httpStatusCode {
         case 200:
             guard let rawData = data.response as? [[String: Any]], !rawData.isEmpty else { return }
+            var allContacts: [Contacts] = []
             rawData.forEach { (current) in
                 let contact: Contacts = Contacts(with: current)
-                debugPrint(contact.firstName, contact.lastName, contact.email, contact.favourite)
-                let baseCellData: BaseTableCellDataModel = BaseTableCellDataModel(with: contact.profilePic, title: contact.firstName + contact.lastName, and: contact.favourite)
-                tableData.append(ContactsGenericCell(with: baseCellData, and: .base))
+                if let firstChar = contact.firstName.first, !sectionHeaders.contains(firstChar.description) {
+                    sectionHeaders.append(firstChar.description)
+                }
+                if !contact.firstName.isEmpty {
+                    allContacts.append(contact)
+                }
             }
+            allContacts = allContacts.sorted(by: { $0.firstName.lowercased() < $1.firstName.lowercased() })
+            sectionHeaders = sectionHeaders.sorted(by: { $0.lowercased() < $1.lowercased() })
             view?.reloadData()
         default: break //Can be customized and show some error if required
         }

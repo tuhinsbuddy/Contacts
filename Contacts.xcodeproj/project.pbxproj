@@ -46,9 +46,9 @@
 		591741CE239D06F70005C7AD /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591741CA239D06F70005C7AD /* BaseTableViewCell.xib */; };
 		591741CF239D06F70005C7AD /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591741CA239D06F70005C7AD /* BaseTableViewCell.xib */; };
 		591741D0239D06F70005C7AD /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591741CA239D06F70005C7AD /* BaseTableViewCell.xib */; };
-		591741D2239D13930005C7AD /* BaseTableCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741D1239D13930005C7AD /* BaseTableCellDataModel.swift */; };
-		591741D3239D13930005C7AD /* BaseTableCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741D1239D13930005C7AD /* BaseTableCellDataModel.swift */; };
-		591741D4239D13930005C7AD /* BaseTableCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741D1239D13930005C7AD /* BaseTableCellDataModel.swift */; };
+		591741D2239D13930005C7AD /* BaseCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741D1239D13930005C7AD /* BaseCellDataModel.swift */; };
+		591741D3239D13930005C7AD /* BaseCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741D1239D13930005C7AD /* BaseCellDataModel.swift */; };
+		591741D4239D13930005C7AD /* BaseCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741D1239D13930005C7AD /* BaseCellDataModel.swift */; };
 		591741D6239D14580005C7AD /* BaseTableViewCell+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741D5239D14580005C7AD /* BaseTableViewCell+Extend.swift */; };
 		591741D7239D14580005C7AD /* BaseTableViewCell+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741D5239D14580005C7AD /* BaseTableViewCell+Extend.swift */; };
 		591741D8239D14580005C7AD /* BaseTableViewCell+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741D5239D14580005C7AD /* BaseTableViewCell+Extend.swift */; };
@@ -188,7 +188,7 @@
 		591741C2239D06EE0005C7AD /* EditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTableViewCell.xib; sourceTree = "<group>"; };
 		591741C9239D06F70005C7AD /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		591741CA239D06F70005C7AD /* BaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseTableViewCell.xib; sourceTree = "<group>"; };
-		591741D1239D13930005C7AD /* BaseTableCellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCellDataModel.swift; sourceTree = "<group>"; };
+		591741D1239D13930005C7AD /* BaseCellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellDataModel.swift; sourceTree = "<group>"; };
 		591741D5239D14580005C7AD /* BaseTableViewCell+Extend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTableViewCell+Extend.swift"; sourceTree = "<group>"; };
 		591741D9239D164D0005C7AD /* BaseTableViewCell+UIExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTableViewCell+UIExtend.swift"; sourceTree = "<group>"; };
 		591741DE239D25640005C7AD /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -299,7 +299,7 @@
 				591741D9239D164D0005C7AD /* BaseTableViewCell+UIExtend.swift */,
 				591741D5239D14580005C7AD /* BaseTableViewCell+Extend.swift */,
 				591741CA239D06F70005C7AD /* BaseTableViewCell.xib */,
-				591741D1239D13930005C7AD /* BaseTableCellDataModel.swift */,
+				591741D1239D13930005C7AD /* BaseCellDataModel.swift */,
 			);
 			path = "Base Cell";
 			sourceTree = "<group>";
@@ -860,7 +860,7 @@
 				59174199239BF6490005C7AD /* ContactsStaticMessages.swift in Sources */,
 				591741BB239D06E20005C7AD /* DeleteTableViewCell.swift in Sources */,
 				59F64F67239ACCC400F3AA9A /* UpdateContactPresenter.swift in Sources */,
-				591741D2239D13930005C7AD /* BaseTableCellDataModel.swift in Sources */,
+				591741D2239D13930005C7AD /* BaseCellDataModel.swift in Sources */,
 				5953114D2398D733001A0EE3 /* ContentView.swift in Sources */,
 				59F64FA0239ACCED00F3AA9A /* DetailsProtocols.swift in Sources */,
 				59F64F6D239ACCC400F3AA9A /* UpdateContactViewController.swift in Sources */,
@@ -884,7 +884,7 @@
 				59F64FA4239ACCED00F3AA9A /* DetailsInteractor.swift in Sources */,
 				59F64F80239ACCE300F3AA9A /* BasePresenter.swift in Sources */,
 				59F64F74239ACCC400F3AA9A /* UpdateContactInteractor.swift in Sources */,
-				591741D3239D13930005C7AD /* BaseTableCellDataModel.swift in Sources */,
+				591741D3239D13930005C7AD /* BaseCellDataModel.swift in Sources */,
 				591741E4239D32D00005C7AD /* LoaderTableViewCell+UIExtend.swift in Sources */,
 				59AEC6E6239A0C7500EA4AB4 /* Contacts+Api.swift in Sources */,
 				59AEC6ED239A0CC700EA4AB4 /* Contacts+BaseResponse.swift in Sources */,
@@ -930,7 +930,7 @@
 				59F64FA5239ACCED00F3AA9A /* DetailsInteractor.swift in Sources */,
 				59F64F81239ACCE300F3AA9A /* BasePresenter.swift in Sources */,
 				59F64F75239ACCC400F3AA9A /* UpdateContactInteractor.swift in Sources */,
-				591741D4239D13930005C7AD /* BaseTableCellDataModel.swift in Sources */,
+				591741D4239D13930005C7AD /* BaseCellDataModel.swift in Sources */,
 				591741E5239D32D00005C7AD /* LoaderTableViewCell+UIExtend.swift in Sources */,
 				59AEC6E7239A0C7500EA4AB4 /* Contacts+Api.swift in Sources */,
 				59AEC6EE239A0CC700EA4AB4 /* Contacts+BaseResponse.swift in Sources */,

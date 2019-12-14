@@ -23,7 +23,7 @@ extension BaseViewController {
             cellObject.selectionStyle = .none
             return cellObject
         default:
-            guard let dataC = presenter.tableData[index.section].data as? BaseTableCellDataModel,
+            guard let dataC = presenter.tableData[index.section].data as? BaseCellDataModel,
                 let cellObject = tableView
                     .dequeueReusableCell(withIdentifier: "BaseTableViewCell") as? BaseTableViewCell else {
                         return UITableViewCell()

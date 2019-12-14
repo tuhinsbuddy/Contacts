@@ -9,7 +9,7 @@
 import Foundation
 
 extension BaseTableViewCell {
-    public func setup(with data: BaseTableCellDataModel) {
+    public func setup(with data: BaseCellDataModel) {
         
     }
 }

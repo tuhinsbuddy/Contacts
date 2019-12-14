@@ -10,12 +10,6 @@ import UIKit
 
 final public class Contacts {
     let id: Int
-//    var title: String
-//    var titleTextColor: UIColor
-//    var titleTextFont: UIFont
-//    var titleTextAlignment: NSTextAlignment
-//    var titleTextNumberOfLines: Int
-//    var titleTextFitSize: Bool
     let firstName: String
     var firstNameTextColor: UIColor
     var firstNameTextFont: UIFont
@@ -42,13 +36,13 @@ final public class Contacts {
         }
         if let firstNameC = data[ContactsParams.firstName] as? String,
             !firstNameC.isEmpty {
-            firstName = firstNameC
+            firstName = firstNameC.capitalized
         } else {
             firstName = ""
         }
         if let lastNameC = data[ContactsParams.lastName] as? String,
             !lastNameC.isEmpty {
-            lastName = lastNameC
+            lastName = lastNameC.capitalized
         } else {
             lastName = ""
         }

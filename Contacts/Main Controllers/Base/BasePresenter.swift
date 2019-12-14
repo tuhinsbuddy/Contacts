@@ -13,6 +13,7 @@ final class BasePresenter: BasePresenterProtocol {
     private let router: BaseWireframeProtocol
     private var layoutDone: Bool = false
     var tableData: [ContactsGenericCell] = []
+    var sectionHeaders: [String] = []
     init(interface: BaseViewProtocol, interactor: BaseInteractorInputProtocol?, router: BaseWireframeProtocol) {
         self.view = interface
         self.interactorInput = interactor
