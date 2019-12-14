@@ -8,11 +8,11 @@
 import UIKit
 
 final class BasePresenter: BasePresenterProtocol {
-    weak private var view: BaseViewProtocol?
+    weak internal var view: BaseViewProtocol?
     var interactorInput: BaseInteractorInputProtocol?
     private let router: BaseWireframeProtocol
     private var layoutDone: Bool = false
-    var tableData: [ContactsGenericCell] = [ContactsGenericCell()]
+    var tableData: [ContactsGenericCell] = []
     init(interface: BaseViewProtocol, interactor: BaseInteractorInputProtocol?, router: BaseWireframeProtocol) {
         self.view = interface
         self.interactorInput = interactor

@@ -26,9 +26,7 @@ final public class ContactsRequestEngine {
             }
             return
         }
-        
         Alamofire.request(api, method: method.rawValue.httpMethod, parameters: params, encoding: JSONEncoding.default, headers: head).responseJSON(completionHandler: { response in
-            debugPrint("Request using Alamofire for - \(api) and the response is - \(response)")
             let statusCode: Int = response.response?.statusCode ?? 404
             if let errorC = response.result.error {
                 let error: ContactsGenericResponse = ContactsGenericResponse(withStatusCode: statusCode, withResponseType: .error, message: errorC.localizedDescription)
@@ -40,7 +38,7 @@ final public class ContactsRequestEngine {
                         onCompletion?(error)
                     }
                 }
-            } else if let responseC = response.result.value as? [String: Any], !responseC.isEmpty {
+            } else if let responseC = response.result.value {
                 let success: ContactsGenericResponse = ContactsGenericResponse(withData: responseC, withStatusCode: statusCode, withResponseType: .success, message: ContactsStaticMessages.successful)
                 switch Thread.isMainThread {
                 case true:

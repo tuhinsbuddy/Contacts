@@ -32,9 +32,12 @@ extension BaseViewController: BaseViewProtocol {
     func reloadData() {
         switch Thread.isMainThread {
         case true:
-            break
+            baseTableView.reloadData()
         case false:
-            break
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.baseTableView.reloadData()
+            }
         }
     }
 }

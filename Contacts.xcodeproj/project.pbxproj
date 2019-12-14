@@ -10,9 +10,9 @@
 		59174199239BF6490005C7AD /* ContactsStaticMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59174198239BF6490005C7AD /* ContactsStaticMessages.swift */; };
 		5917419A239BF6490005C7AD /* ContactsStaticMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59174198239BF6490005C7AD /* ContactsStaticMessages.swift */; };
 		5917419B239BF6490005C7AD /* ContactsStaticMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59174198239BF6490005C7AD /* ContactsStaticMessages.swift */; };
-		5917419D239CDAAE0005C7AD /* BasePresenter+VIewExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5917419C239CDAAE0005C7AD /* BasePresenter+VIewExtend.swift */; };
-		5917419E239CDAAE0005C7AD /* BasePresenter+VIewExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5917419C239CDAAE0005C7AD /* BasePresenter+VIewExtend.swift */; };
-		5917419F239CDAAE0005C7AD /* BasePresenter+VIewExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5917419C239CDAAE0005C7AD /* BasePresenter+VIewExtend.swift */; };
+		5917419D239CDAAE0005C7AD /* BasePresenter+ViewExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5917419C239CDAAE0005C7AD /* BasePresenter+ViewExtend.swift */; };
+		5917419E239CDAAE0005C7AD /* BasePresenter+ViewExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5917419C239CDAAE0005C7AD /* BasePresenter+ViewExtend.swift */; };
+		5917419F239CDAAE0005C7AD /* BasePresenter+ViewExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5917419C239CDAAE0005C7AD /* BasePresenter+ViewExtend.swift */; };
 		591741A1239CDCAA0005C7AD /* BaseViewController+UIExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741A0239CDCAA0005C7AD /* BaseViewController+UIExtend.swift */; };
 		591741A2239CDCAA0005C7AD /* BaseViewController+UIExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741A0239CDCAA0005C7AD /* BaseViewController+UIExtend.swift */; };
 		591741A3239CDCAA0005C7AD /* BaseViewController+UIExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741A0239CDCAA0005C7AD /* BaseViewController+UIExtend.swift */; };
@@ -176,7 +176,7 @@
 		4357944803050AEF248D0746 /* libPods-Contacts.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Contacts.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5221692633D05CC2C96A1717 /* Pods-Contacts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Contacts.release.xcconfig"; path = "Target Support Files/Pods-Contacts/Pods-Contacts.release.xcconfig"; sourceTree = "<group>"; };
 		59174198239BF6490005C7AD /* ContactsStaticMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsStaticMessages.swift; sourceTree = "<group>"; };
-		5917419C239CDAAE0005C7AD /* BasePresenter+VIewExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasePresenter+VIewExtend.swift"; sourceTree = "<group>"; };
+		5917419C239CDAAE0005C7AD /* BasePresenter+ViewExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasePresenter+ViewExtend.swift"; sourceTree = "<group>"; };
 		591741A0239CDCAA0005C7AD /* BaseViewController+UIExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseViewController+UIExtend.swift"; sourceTree = "<group>"; };
 		591741A4239CDD3F0005C7AD /* BaseViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseViewController+UITableView.swift"; sourceTree = "<group>"; };
 		591741A8239D02310005C7AD /* ContactsGenericCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsGenericCell.swift; sourceTree = "<group>"; };
@@ -491,7 +491,7 @@
 			isa = PBXGroup;
 			children = (
 				59F64F79239ACCE300F3AA9A /* BasePresenter.swift */,
-				5917419C239CDAAE0005C7AD /* BasePresenter+VIewExtend.swift */,
+				5917419C239CDAAE0005C7AD /* BasePresenter+ViewExtend.swift */,
 				59F64F7A239ACCE300F3AA9A /* BaseRouter.swift */,
 				59F64F7B239ACCE300F3AA9A /* BaseViewController.swift */,
 				591741A0239CDCAA0005C7AD /* BaseViewController+UIExtend.swift */,
@@ -866,7 +866,7 @@
 				59F64F6D239ACCC400F3AA9A /* UpdateContactViewController.swift in Sources */,
 				59F64FA3239ACCED00F3AA9A /* DetailsInteractor.swift in Sources */,
 				591741DF239D25640005C7AD /* BaseNavigationController.swift in Sources */,
-				5917419D239CDAAE0005C7AD /* BasePresenter+VIewExtend.swift in Sources */,
+				5917419D239CDAAE0005C7AD /* BasePresenter+ViewExtend.swift in Sources */,
 				59AEC6E5239A0C7500EA4AB4 /* Contacts+Api.swift in Sources */,
 				59F64F73239ACCC400F3AA9A /* UpdateContactInteractor.swift in Sources */,
 				59AEC6E1239A0C5800EA4AB4 /* Contacts+Params.swift in Sources */,
@@ -905,7 +905,7 @@
 				591741A2239CDCAA0005C7AD /* BaseViewController+UIExtend.swift in Sources */,
 				59F64F83239ACCE300F3AA9A /* BaseRouter.swift in Sources */,
 				59AEC6E2239A0C5800EA4AB4 /* Contacts+Params.swift in Sources */,
-				5917419E239CDAAE0005C7AD /* BasePresenter+VIewExtend.swift in Sources */,
+				5917419E239CDAAE0005C7AD /* BasePresenter+ViewExtend.swift in Sources */,
 				59F64FB1239ADD3900F3AA9A /* Date+Extend.swift in Sources */,
 				59F64F9E239ACCED00F3AA9A /* DetailsViewController.swift in Sources */,
 				591741A6239CDD3F0005C7AD /* BaseViewController+UITableView.swift in Sources */,
@@ -951,7 +951,7 @@
 				591741A3239CDCAA0005C7AD /* BaseViewController+UIExtend.swift in Sources */,
 				59F64F84239ACCE300F3AA9A /* BaseRouter.swift in Sources */,
 				59AEC6E3239A0C5800EA4AB4 /* Contacts+Params.swift in Sources */,
-				5917419F239CDAAE0005C7AD /* BasePresenter+VIewExtend.swift in Sources */,
+				5917419F239CDAAE0005C7AD /* BasePresenter+ViewExtend.swift in Sources */,
 				59F64FB2239ADD3900F3AA9A /* Date+Extend.swift in Sources */,
 				59F64F9F239ACCED00F3AA9A /* DetailsViewController.swift in Sources */,
 				591741A7239CDD3F0005C7AD /* BaseViewController+UITableView.swift in Sources */,

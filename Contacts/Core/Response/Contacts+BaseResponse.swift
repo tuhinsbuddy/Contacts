@@ -9,11 +9,11 @@
 import Foundation
 
 public struct ContactsGenericResponse {
-    let response: [String: Any]
+    let response: Any?
     let httpStatusCode: Int
     let responseType: ResponseType
     let message: String
-    init(withData data: [String: Any] = [:], withStatusCode code: Int = 200, withResponseType type: ResponseType = .success, message msg: String = ContactsStaticMessages.successful) {
+    init(withData data: Any? = nil, withStatusCode code: Int = 200, withResponseType type: ResponseType = .success, message msg: String = ContactsStaticMessages.successful) {
         self.response = data
         self.httpStatusCode = code
         self.responseType = type
