@@ -6,7 +6,7 @@
 //  Copyright © 2019 Swift Contacts. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension BasePresenter: BaseInteractorOutputProtocol {
     func baseResponse(with data: ContactsGenericResponse) {
@@ -18,7 +18,7 @@ extension BasePresenter: BaseInteractorOutputProtocol {
             rawData.forEach { (current) in
                 let contact: Contacts = Contacts(with: current)
                 if !contact.firstName.isEmpty {
-                    allContacts.append(contact)
+                    allContacts.append(setUIPropeties(for: contact))
                 }
                 if let firstChar = contact.firstName.first,
                     !sectionHeaders.contains(firstChar.description) {
@@ -32,5 +32,21 @@ extension BasePresenter: BaseInteractorOutputProtocol {
         default: break //Can be customized and show some error if required
         }
         view?.reloadData()
+    }
+}
+
+private extension BasePresenter {
+    func setUIPropeties(for contact: Contacts) -> Contacts {
+        contact.firstNameTextColor = .titleTextColor
+        contact.firstNameTextFont = .boldSystemFont(ofSize: 14)
+        contact.firstNameTextAlignment = .left
+        contact.firstNameTextNumberOfLines = 1
+        contact.firstNameTextFitSize = true
+        contact.lastNameTextColor = .titleTextColor
+        contact.lastNameTextFont = .boldSystemFont(ofSize: 14)
+        contact.lastNameTextAlignment = .left
+        contact.lastNameTextNumberOfLines = 1
+        contact.lastNameTextFitSize = true
+        return contact
     }
 }
