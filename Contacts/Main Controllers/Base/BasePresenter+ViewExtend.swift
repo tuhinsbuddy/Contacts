@@ -15,18 +15,28 @@ extension BasePresenter: BaseInteractorOutputProtocol {
             guard let rawData = data.response as? [[String: Any]], !rawData.isEmpty else { return }
             tableData = []
             var allContacts: [Contacts] = []
+            var lastHeader: String = ""
+            var currentHeader: String = ""
+            rawData.forEach { (current) in
+                let contact: Contacts = Contacts(with: current)
+                if let firstChar = contact.firstName.first,
+                    !sectionHeaders.contains(firstChar.description) {
+                    sectionHeaders.append(firstChar.description)
+                }
+            }
             rawData.forEach { (current) in
                 let contact: Contacts = Contacts(with: current)
                 if !contact.firstName.isEmpty {
                     allContacts.append(setUIPropeties(for: contact))
                 }
-                if let firstChar = contact.firstName.first,
-                    !sectionHeaders.contains(firstChar.description) {
-                    sectionHeaders.append(firstChar.description)
-                    sectionHeaders = sectionHeaders.sorted(by: { $0.lowercased() < $1.lowercased() })
-                    allContacts = allContacts.sorted(by: { $0.firstName.lowercased() < $1.firstName.lowercased() })
-                    tableData.append(ContactsGenericCell(with: BaseCellDataModel(with: firstChar.description, and: allContacts), and: .base))
-                    allContacts = []
+                if let firstChar = contact.firstName.first, !firstChar.description.isEmpty {
+                    currentHeader = firstChar.description
+                    if lastHeader.isEmpty { lastHeader = currentHeader }
+                    if lastHeader != currentHeader, sectionHeaders.contains(currentHeader) {
+                        allContacts = allContacts.sorted(by: { $0.firstName.lowercased() < $1.firstName.lowercased() })
+                        tableData.append(ContactsGenericCell(with: BaseCellDataModel(with: firstChar.description, and: allContacts), and: .base))
+                        allContacts = []
+                    }
                 }
             }
         default: break //Can be customized and show some error if required
