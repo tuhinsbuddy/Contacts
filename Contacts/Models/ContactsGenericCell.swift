@@ -11,7 +11,7 @@ import Foundation
 public struct ContactsGenericCell {
     let cellType: UICellType
     let data: Any
-    init(with data: Any, and type: UICellType = .loader) {
+    init(with data: Any = "", and type: UICellType = .loader) {
         self.cellType = type
         self.data = data
     }

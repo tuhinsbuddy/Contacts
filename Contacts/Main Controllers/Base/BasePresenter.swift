@@ -9,10 +9,10 @@ import UIKit
 
 final class BasePresenter: BasePresenterProtocol {
     weak internal var view: BaseViewProtocol?
-    var interactorInput: BaseInteractorInputProtocol?
     private let router: BaseWireframeProtocol
     private var layoutDone: Bool = false
-    var tableData: [ContactsGenericCell] = []
+    var interactorInput: BaseInteractorInputProtocol?
+    var tableData: [ContactsGenericCell] = [ContactsGenericCell()]
     var sectionHeaders: [String] = []
     init(interface: BaseViewProtocol, interactor: BaseInteractorInputProtocol?, router: BaseWireframeProtocol) {
         self.view = interface

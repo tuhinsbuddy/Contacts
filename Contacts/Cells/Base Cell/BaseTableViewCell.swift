@@ -23,4 +23,9 @@ final class BaseTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        profileImageSuperView.layer.cornerRadius = 20
+        profileImageSuperView.clipsToBounds = true
+    }
 }

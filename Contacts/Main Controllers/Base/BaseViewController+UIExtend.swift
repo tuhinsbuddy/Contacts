@@ -20,7 +20,7 @@ extension BaseViewController: BaseViewProtocol {
         } else {
             baseTableView.backgroundColor = .white
         }
-        baseTableView.separatorStyle = .none
+        baseTableView.separatorStyle = .singleLine
         baseTableView.showsHorizontalScrollIndicator = false
         baseTableView.showsVerticalScrollIndicator = false
         baseTableView.delegate = self

@@ -9,6 +9,15 @@
 import UIKit
 
 public extension UIColor {
+    static let titleTextColor: UIColor = UIColor(hexValue: ColorHexCodes.textColor)
+    static let placeholderColor: UIColor = UIColor(hexValue: ColorHexCodes.textColor).withAlphaComponent(0.5)
+}
+
+private struct ColorHexCodes {
+    private init() {}
+    static let textColor: Int = 0x4A4A4A
+}
+public extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid RED")
         assert(green >= 0 && green <= 255, "Invalid GREEN")
@@ -24,11 +33,4 @@ public extension UIColor {
             green: (hexValue >> 8) & 0xFF,
             blue: hexValue & 0xFF
         )}
-    static let titleTextColor: UIColor = UIColor(hexValue: ColorHexCodes.textColor)
-    static let placeholderColor: UIColor = UIColor(hexValue: ColorHexCodes.textColor).withAlphaComponent(0.5)
-}
-
-private struct ColorHexCodes {
-    private init() {}
-    static let textColor: Int = 0x4A4A4A
 }

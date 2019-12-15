@@ -13,6 +13,7 @@ extension BasePresenter: BaseInteractorOutputProtocol {
         switch data.httpStatusCode {
         case 200:
             guard let rawData = data.response as? [[String: Any]], !rawData.isEmpty else { return }
+            tableData = []
             var allContacts: [Contacts] = []
             rawData.forEach { (current) in
                 let contact: Contacts = Contacts(with: current)
