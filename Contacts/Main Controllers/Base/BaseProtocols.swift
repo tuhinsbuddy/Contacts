@@ -17,6 +17,7 @@ protocol BasePresenterProtocol: class {
     //Write all Presenter Protocols Here.
     var interactorInput: BaseInteractorInputProtocol? { get set }
     var tableData: [ContactsGenericCell] { get }
+    var sectionHeaders: [String] { get }
     func loadView()
     func viewDidLayoutSubViews()
 }

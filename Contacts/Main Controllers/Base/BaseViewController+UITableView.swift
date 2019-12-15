@@ -29,7 +29,7 @@ extension BaseViewController {
                         return UITableViewCell()
             }
             cellObject.selectionStyle = .none
-            cellObject.setup(with: dataC)
+            cellObject.setup(with: dataC.sectionRow[index.row])
             return cellObject
         }
     }
@@ -76,15 +76,21 @@ extension BaseViewController: UITableViewDelegate {
 }
 extension BaseViewController: UITableViewDataSource {
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return ["A", "B", "C", "D"]
+        guard let presenter = presenterOutput,
+            !presenter.sectionHeaders.isEmpty else { return nil }
+        return presenter.sectionHeaders
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         guard let presenter = presenterOutput,
-            !presenter.tableData.isEmpty else { return 1 }
-        return presenter.tableData.count
+            !presenter.sectionHeaders.isEmpty else { return 1 }
+        return presenter.sectionHeaders.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        guard let presenter = presenterOutput,
+            !presenter.tableData.isEmpty,
+            let dataC = presenter.tableData[section].data as? BaseCellDataModel,
+            !dataC.sectionRow.isEmpty else { return 1 }
+        return dataC.sectionRow.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return createCellForTable(withTableView: tableView, withIndex: indexPath)

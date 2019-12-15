@@ -16,17 +16,20 @@ extension BasePresenter: BaseInteractorOutputProtocol {
             var allContacts: [Contacts] = []
             rawData.forEach { (current) in
                 let contact: Contacts = Contacts(with: current)
-                if let firstChar = contact.firstName.first, !sectionHeaders.contains(firstChar.description) {
-                    sectionHeaders.append(firstChar.description)
-                }
                 if !contact.firstName.isEmpty {
                     allContacts.append(contact)
                 }
+                if let firstChar = contact.firstName.first,
+                    !sectionHeaders.contains(firstChar.description) {
+                    sectionHeaders.append(firstChar.description)
+                    sectionHeaders = sectionHeaders.sorted(by: { $0.lowercased() < $1.lowercased() })
+                    allContacts = allContacts.sorted(by: { $0.firstName.lowercased() < $1.firstName.lowercased() })
+                    tableData.append(ContactsGenericCell(with: BaseCellDataModel(with: firstChar.description, and: allContacts), and: .base))
+                    allContacts = []
+                }
             }
-            allContacts = allContacts.sorted(by: { $0.firstName.lowercased() < $1.firstName.lowercased() })
-            sectionHeaders = sectionHeaders.sorted(by: { $0.lowercased() < $1.lowercased() })
-            view?.reloadData()
         default: break //Can be customized and show some error if required
         }
+        view?.reloadData()
     }
 }
