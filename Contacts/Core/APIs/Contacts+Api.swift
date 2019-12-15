@@ -10,6 +10,7 @@ import Foundation
 
 public struct ContactsApis {
     private init() {}
+    public static let base : String = "​http://gojek-contacts-app.herokuapp.com"
     public static var baseUrl: String {
         #if DEBUG
             return "​http://gojek-contacts-app.herokuapp.com"

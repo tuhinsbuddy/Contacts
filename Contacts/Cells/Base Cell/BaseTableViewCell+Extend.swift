@@ -9,10 +9,12 @@
 import UIKit
 import Kingfisher
 
+let baseU: String = "http://gojek-contacts-app.herokuapp.com"
 extension BaseTableViewCell {
     public func setup(with data: Contacts) {
-        if !data.profilePic.isEmpty,
-            let profileImage: URL = URL(string: data.profilePic) {
+        if !data.profilePic.isEmpty {
+            let finalUrl: String = baseU + data.profilePic
+            guard let profileImage: URL = URL(string: finalUrl) else { return }
             profileImageView.kf.indicatorType = .activity
             profileImageView.kf.setImage(
                 with: profileImage,
@@ -22,7 +24,7 @@ extension BaseTableViewCell {
                     .cacheOriginalImage
             ])
         }
-        profileNameLbl.text = data.firstName + data.lastName
+        profileNameLbl.text = "\(data.firstName) \(data.lastName)"
 //        @IBOutlet weak var favouriteSuperView: UIView!
 //        @IBOutlet weak var favouriteImageView: UIImageView!
     }
