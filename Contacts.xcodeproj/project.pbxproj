@@ -88,9 +88,9 @@
 		59AEC6EC239A0CC700EA4AB4 /* Contacts+BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AEC6EB239A0CC700EA4AB4 /* Contacts+BaseResponse.swift */; };
 		59AEC6ED239A0CC700EA4AB4 /* Contacts+BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AEC6EB239A0CC700EA4AB4 /* Contacts+BaseResponse.swift */; };
 		59AEC6EE239A0CC700EA4AB4 /* Contacts+BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AEC6EB239A0CC700EA4AB4 /* Contacts+BaseResponse.swift */; };
-		59AEC6F1239A0CE700EA4AB4 /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AEC6F0239A0CE700EA4AB4 /* ContactsModel.swift */; };
-		59AEC6F2239A0CE700EA4AB4 /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AEC6F0239A0CE700EA4AB4 /* ContactsModel.swift */; };
-		59AEC6F3239A0CE700EA4AB4 /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AEC6F0239A0CE700EA4AB4 /* ContactsModel.swift */; };
+		59AEC6F1239A0CE700EA4AB4 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AEC6F0239A0CE700EA4AB4 /* Contact.swift */; };
+		59AEC6F2239A0CE700EA4AB4 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AEC6F0239A0CE700EA4AB4 /* Contact.swift */; };
+		59AEC6F3239A0CE700EA4AB4 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AEC6F0239A0CE700EA4AB4 /* Contact.swift */; };
 		59F64F67239ACCC400F3AA9A /* UpdateContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F64F61239ACCC400F3AA9A /* UpdateContactPresenter.swift */; };
 		59F64F68239ACCC400F3AA9A /* UpdateContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F64F61239ACCC400F3AA9A /* UpdateContactPresenter.swift */; };
 		59F64F69239ACCC400F3AA9A /* UpdateContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F64F61239ACCC400F3AA9A /* UpdateContactPresenter.swift */; };
@@ -214,7 +214,7 @@
 		59AEC6E0239A0C5800EA4AB4 /* Contacts+Params.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contacts+Params.swift"; sourceTree = "<group>"; };
 		59AEC6E4239A0C7500EA4AB4 /* Contacts+Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contacts+Api.swift"; sourceTree = "<group>"; };
 		59AEC6EB239A0CC700EA4AB4 /* Contacts+BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contacts+BaseResponse.swift"; sourceTree = "<group>"; };
-		59AEC6F0239A0CE700EA4AB4 /* ContactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsModel.swift; sourceTree = "<group>"; };
+		59AEC6F0239A0CE700EA4AB4 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		59F64F61239ACCC400F3AA9A /* UpdateContactPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContactPresenter.swift; sourceTree = "<group>"; };
 		59F64F62239ACCC400F3AA9A /* UpdateContactRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContactRouter.swift; sourceTree = "<group>"; };
 		59F64F63239ACCC400F3AA9A /* UpdateContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContactViewController.swift; sourceTree = "<group>"; };
@@ -470,7 +470,7 @@
 		59AEC6EF239A0CD900EA4AB4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				59AEC6F0239A0CE700EA4AB4 /* ContactsModel.swift */,
+				59AEC6F0239A0CE700EA4AB4 /* Contact.swift */,
 				591741A8239D02310005C7AD /* ContactsGenericCell.swift */,
 			);
 			path = Models;
@@ -832,7 +832,7 @@
 				59F64F7F239ACCE300F3AA9A /* BasePresenter.swift in Sources */,
 				591741E7239D43550005C7AD /* Contacts+Query.swift in Sources */,
 				59F64FBA239BEAA400F3AA9A /* Contacts+RequestEngine.swift in Sources */,
-				59AEC6F1239A0CE700EA4AB4 /* ContactsModel.swift in Sources */,
+				59AEC6F1239A0CE700EA4AB4 /* Contact.swift in Sources */,
 				59F64F9D239ACCED00F3AA9A /* DetailsViewController.swift in Sources */,
 				591741B3239D06D00005C7AD /* LoaderTableViewCell.swift in Sources */,
 				59F64FB4239AE9F500F3AA9A /* String+Extend.swift in Sources */,
@@ -910,7 +910,7 @@
 				59F64F9E239ACCED00F3AA9A /* DetailsViewController.swift in Sources */,
 				591741A6239CDD3F0005C7AD /* BaseViewController+UITableView.swift in Sources */,
 				59F64F6B239ACCC400F3AA9A /* UpdateContactRouter.swift in Sources */,
-				59AEC6F2239A0CE700EA4AB4 /* ContactsModel.swift in Sources */,
+				59AEC6F2239A0CE700EA4AB4 /* Contact.swift in Sources */,
 				59AEC6DE239A07B000EA4AB4 /* UIColor+Extend.swift in Sources */,
 				591741C4239D06EE0005C7AD /* EditTableViewCell.swift in Sources */,
 				5917419A239BF6490005C7AD /* ContactsStaticMessages.swift in Sources */,
@@ -956,7 +956,7 @@
 				59F64F9F239ACCED00F3AA9A /* DetailsViewController.swift in Sources */,
 				591741A7239CDD3F0005C7AD /* BaseViewController+UITableView.swift in Sources */,
 				59F64F6C239ACCC400F3AA9A /* UpdateContactRouter.swift in Sources */,
-				59AEC6F3239A0CE700EA4AB4 /* ContactsModel.swift in Sources */,
+				59AEC6F3239A0CE700EA4AB4 /* Contact.swift in Sources */,
 				59AEC6DF239A07B000EA4AB4 /* UIColor+Extend.swift in Sources */,
 				591741C5239D06EE0005C7AD /* EditTableViewCell.swift in Sources */,
 				5917419B239BF6490005C7AD /* ContactsStaticMessages.swift in Sources */,

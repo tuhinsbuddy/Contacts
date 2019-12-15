@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 extension BaseTableViewCell {
-    public func setup(with data: Contacts) {
+    public func setup(with data: Contact) {
         if !data.profilePic.isEmpty {
             let finalUrl: String = ContactsApis.baseUrl + data.profilePic
             guard let profileImage: URL = URL(string: finalUrl) else { return }

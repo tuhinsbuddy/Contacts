@@ -10,6 +10,7 @@ import Foundation
 //MARK: Wireframe -
 protocol BaseWireframeProtocol: class {
     //Write all Wireframe Protocols Here.
+    func showDetails(for data: Contact)
 }
 
 //MARK: Presenter -
@@ -20,6 +21,7 @@ protocol BasePresenterProtocol: class {
     var sectionHeaders: [String] { get }
     func loadView()
     func viewDidLayoutSubViews()
+    func selectData(for index: IndexPath)
 }
 
 //MARK: Interactor -

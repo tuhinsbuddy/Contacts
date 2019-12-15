@@ -9,7 +9,7 @@ import UIKit
 
 final class DetailsRouter: DetailsWireframeProtocol {
     weak var viewController: UIViewController?
-    static func show(on view: UIViewController, for data: Contacts) {
+    static func show(on view: UIViewController, for data: Contact) {
         let storyboard: UIStoryboard = UIStoryboard(name: StoryboardName.contacts.rawValue, bundle: nil)
         guard let details = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController else { return }
         let interactor: DetailsInteractor = DetailsInteractor()

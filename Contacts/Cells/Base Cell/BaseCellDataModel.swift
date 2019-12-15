@@ -10,16 +10,8 @@ import UIKit
 
 public final class BaseCellDataModel {
     let sectionHeader: String
-    let sectionRow: [Contacts]
-//    let imageURL: String
-//    let title: String
-//    var titleTextColor: UIColor
-//    var titleTextFont: UIFont
-//    var titleTextAlignment: NSTextAlignment
-//    var titleTextNumberOfLines: Int
-//    var titleTextFitSize: Bool
-//    let isFavourite: Bool
-    init(with header: String, and row: [Contacts]) {
+    let sectionRow: [Contact]
+    init(with header: String, and row: [Contact]) {
         self.sectionHeader = header
         self.sectionRow = row
     }

@@ -29,3 +29,11 @@ final class BasePresenter: BasePresenterProtocol {
         view?.loadLayout()
     }
 }
+extension BasePresenter {
+    func selectData(for index: IndexPath) {
+        guard !tableData.isEmpty,
+            let data = tableData[index.section].data as? BaseCellDataModel,
+            !data.sectionRow.isEmpty else { return }
+        router.showDetails(for: data.sectionRow[index.row])
+    }
+}

@@ -14,14 +14,14 @@ extension BasePresenter: BaseInteractorOutputProtocol {
         case 200:
             guard let rawData = data.response as? [[String: Any]], !rawData.isEmpty else { return }
             tableData = []
-            var tempContacts: [Contacts] = []
+            var tempContacts: [Contact] = []
             var lastHeader: String = ""
             var currentHeader: String = ""
             var baseData: [BaseCellDataModel] = []
             baseData.reserveCapacity(rawData.count)
             //Parsing the data and fetching the headers and data as per the response!
             rawData.forEach { (current) in
-                let contact: Contacts = Contacts(with: current)
+                let contact: Contact = Contact(with: current)
                 if let firstChar = contact.firstName.first, !firstChar.description.isEmpty {
                     currentHeader = firstChar.description
                     if lastHeader.isEmpty { lastHeader = currentHeader }
@@ -52,7 +52,7 @@ extension BasePresenter: BaseInteractorOutputProtocol {
 }
 
 private extension BasePresenter {
-    func setUIPropeties(for contact: Contacts) -> Contacts {
+    func setUIPropeties(for contact: Contact) -> Contact {
         contact.firstNameTextColor = .titleTextColor
         contact.firstNameTextFont = .boldSystemFont(ofSize: 14)
         contact.firstNameTextAlignment = .left

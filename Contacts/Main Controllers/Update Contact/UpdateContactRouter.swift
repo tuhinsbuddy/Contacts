@@ -9,7 +9,7 @@ import UIKit
 
 final class UpdateContactRouter: UpdateContactWireframeProtocol {
     weak var viewController: UIViewController?
-    static func show(on view: UIViewController, for type: ViewType, with data: Contacts) {
+    static func show(on view: UIViewController, for type: ViewType, with data: Contact) {
         let storyboard: UIStoryboard = UIStoryboard(name: StoryboardName.contacts.rawValue, bundle: nil)
         guard let update = storyboard.instantiateViewController(withIdentifier: "UpdateContactViewController") as? UpdateContactViewController else { return }
         let interactor: UpdateContactInteractor = UpdateContactInteractor()

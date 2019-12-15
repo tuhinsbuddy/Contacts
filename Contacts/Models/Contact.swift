@@ -1,5 +1,5 @@
 //
-//  ContactsModel.swift
+//  Contact.swift
 //  Contacts
 //
 //  Created by Tuhin S on 07/12/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final public class Contacts {
+final public class Contact {
     let id: Int
     let firstName: String
     var firstNameTextColor: UIColor
@@ -94,7 +94,7 @@ final public class Contacts {
     }
 }
 
-extension Contacts: ContactsParamRepresntable {
+extension Contact: ContactsParamRepresntable {
     public var createParamRequest: [String : Any] {
         return [ContactsParams.id: self.id,
                 ContactsParams.firstName: self.firstName,

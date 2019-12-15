@@ -35,6 +35,10 @@ extension BaseViewController {
     }
 }
 extension BaseViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let presenter = presenterOutput, !presenter.tableData.isEmpty else { return }
+        
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let presenter = presenterOutput, !presenter.tableData.isEmpty else { return 50 }
         switch presenter.tableData[indexPath.section].cellType {

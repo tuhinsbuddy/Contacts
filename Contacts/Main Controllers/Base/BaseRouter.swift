@@ -21,3 +21,8 @@ final class BaseRouter: BaseWireframeProtocol {
         return base
     }
 }
+extension BaseRouter {
+    func showDetails(for data: Contact) {
+        debugPrint("Selected Contact for details is - \(data.firstName)")
+    }
+}
