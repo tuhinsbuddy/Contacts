@@ -15,13 +15,16 @@ extension BasePresenter: BaseInteractorOutputProtocol {
             guard let rawData = data.response as? [[String: Any]], !rawData.isEmpty else { return }
             tableData = []
             var tempContacts: [Contact] = []
+            tempContacts.reserveCapacity(rawData.count)
             var lastHeader: String = ""
             var currentHeader: String = ""
-            var baseData: [BaseCellDataModel] = []
-            baseData.reserveCapacity(rawData.count)
             //Parsing the data and fetching the headers and data as per the response!
-            rawData.forEach { (current) in
-                let contact: Contact = Contact(with: current)
+            tempContacts = rawData.map({ (rawData) -> Contact in
+                let contact: Contact = Contact(with: rawData)
+                return setUIPropeties(for: contact)
+            })
+            tempContacts = tempContacts.sorted(by: { $0.firstName < $1.firstName })
+            tempContacts.forEach { (contact) in
                 if let firstChar = contact.firstName.first, !firstChar.description.isEmpty {
                     currentHeader = firstChar.description
                     if lastHeader.isEmpty { lastHeader = currentHeader }
@@ -30,21 +33,13 @@ extension BasePresenter: BaseInteractorOutputProtocol {
                         if tempContacts.count > 1 {
                             tempContacts = tempContacts.sorted(by: { $0.firstName.lowercased() < $1.firstName.lowercased() })
                         }
-                        baseData.append(BaseCellDataModel(with: lastHeader, and: tempContacts))
-                        tempContacts = [setUIPropeties(for: contact)]
+                        tableData.append(ContactsGenericCell(with: BaseCellDataModel(with: lastHeader, and: tempContacts), and: .base))
                         lastHeader = currentHeader
                     } else {
                         tempContacts.append(setUIPropeties(for: contact))
                     }
                 }
             }
-            //Sorting both the headers and data
-            sectionHeaders = sectionHeaders.sorted(by: { $0 < $1 })
-            baseData = baseData.sorted(by: { $0.sectionHeader < $1.sectionHeader })
-            //Finally converting all the data to the generic cell model structure
-            tableData = baseData.map({ (model) -> ContactsGenericCell in
-                return ContactsGenericCell(with: model, and: .base)
-            })
         default: break //Can be customized and show some error if required
         }
         view?.reloadData()

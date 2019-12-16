@@ -37,7 +37,7 @@ extension BaseViewController {
 extension BaseViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let presenter = presenterOutput, !presenter.tableData.isEmpty else { return }
-        
+        presenter.selectData(for: indexPath)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let presenter = presenterOutput, !presenter.tableData.isEmpty else { return 50 }
