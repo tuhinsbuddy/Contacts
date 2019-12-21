@@ -82,14 +82,14 @@ final public class Contact {
             createdAt = Date()
         }
         firstNameTextColor = .titleTextColor
-        firstNameTextFont = .systemFont(ofSize: 14)
+        firstNameTextFont = .systemFont(ofSize: 12)
         firstNameTextAlignment = .left
-        firstNameTextNumberOfLines = 1
+        firstNameTextNumberOfLines = 0
         firstNameTextFitSize = true
         lastNameTextColor = .titleTextColor
-        lastNameTextFont = .systemFont(ofSize: 14)
+        lastNameTextFont = .systemFont(ofSize: 12)
         lastNameTextAlignment = .left
-        lastNameTextNumberOfLines = 1
+        lastNameTextNumberOfLines = 0
         lastNameTextFitSize = true
     }
 }

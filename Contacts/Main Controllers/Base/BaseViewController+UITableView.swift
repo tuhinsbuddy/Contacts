@@ -43,7 +43,7 @@ extension BaseViewController: UITableViewDelegate {
         guard let presenter = presenterOutput, !presenter.tableData.isEmpty else { return 50 }
         switch presenter.tableData[indexPath.section].cellType {
         case .loader: return tableView.frame.size.height
-        default: return 65
+        default: return 80
         }
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

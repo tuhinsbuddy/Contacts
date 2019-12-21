@@ -24,5 +24,7 @@ extension BaseTableViewCell {
             ])
         }
         profileNameLbl.text = "\(data.firstName) \(data.lastName)"
+        profileNameLbl.font = data.firstNameTextFont
+        profileNameLbl.numberOfLines = data.firstNameTextNumberOfLines
     }
 }
