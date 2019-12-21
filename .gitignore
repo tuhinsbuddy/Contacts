@@ -61,3 +61,6 @@ Pods/
 #
 Carthage/Checkouts
 Carthage/Build
+
+# Conflicted backup files
+*.orig

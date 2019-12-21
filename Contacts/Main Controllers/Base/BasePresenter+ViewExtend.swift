@@ -14,17 +14,19 @@ extension BasePresenter: BaseInteractorOutputProtocol {
         case 200:
             guard let rawData = data.response as? [[String: Any]], !rawData.isEmpty else { return }
             tableData = []
-            var tempContacts: [Contact] = []
-            tempContacts.reserveCapacity(rawData.count)
+            var finalContacts: [Contact] = []
+            finalContacts.reserveCapacity(rawData.count)
             var lastHeader: String = ""
             var currentHeader: String = ""
             //Parsing the data and fetching the headers and data as per the response!
-            tempContacts = rawData.map({ (rawData) -> Contact in
+            finalContacts = rawData.map({ (rawData) -> Contact in
                 let contact: Contact = Contact(with: rawData)
                 return setUIPropeties(for: contact)
             })
-            tempContacts = tempContacts.sorted(by: { $0.firstName < $1.firstName })
-            tempContacts.forEach { (contact) in
+            finalContacts = finalContacts.sorted(by: { $0.firstName < $1.firstName })
+            var tempContacts: [Contact] = []
+            tempContacts.reserveCapacity(rawData.count)
+            finalContacts.forEach { (contact) in
                 if let firstChar = contact.firstName.first, !firstChar.description.isEmpty {
                     currentHeader = firstChar.description
                     if lastHeader.isEmpty { lastHeader = currentHeader }
@@ -34,6 +36,7 @@ extension BasePresenter: BaseInteractorOutputProtocol {
                             tempContacts = tempContacts.sorted(by: { $0.firstName.lowercased() < $1.firstName.lowercased() })
                         }
                         tableData.append(ContactsGenericCell(with: BaseCellDataModel(with: lastHeader, and: tempContacts), and: .base))
+                        tempContacts = [setUIPropeties(for: contact)]
                         lastHeader = currentHeader
                     } else {
                         tempContacts.append(setUIPropeties(for: contact))
