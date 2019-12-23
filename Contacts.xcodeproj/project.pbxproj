@@ -64,6 +64,9 @@
 		591741E7239D43550005C7AD /* Contacts+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741E6239D43550005C7AD /* Contacts+Query.swift */; };
 		591741E8239D43550005C7AD /* Contacts+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741E6239D43550005C7AD /* Contacts+Query.swift */; };
 		591741E9239D43550005C7AD /* Contacts+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591741E6239D43550005C7AD /* Contacts+Query.swift */; };
+		593E3AF423AEB09400CD70F7 /* UITableView+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E3AF323AEB09400CD70F7 /* UITableView+Extend.swift */; };
+		593E3AF523AEB09400CD70F7 /* UITableView+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E3AF323AEB09400CD70F7 /* UITableView+Extend.swift */; };
+		593E3AF623AEB09400CD70F7 /* UITableView+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E3AF323AEB09400CD70F7 /* UITableView+Extend.swift */; };
 		595311462398D733001A0EE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595311452398D733001A0EE3 /* AppDelegate.swift */; };
 		595311482398D733001A0EE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595311472398D733001A0EE3 /* SceneDelegate.swift */; };
 		5953114B2398D733001A0EE3 /* Contacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 595311492398D733001A0EE3 /* Contacts.xcdatamodeld */; };
@@ -194,6 +197,7 @@
 		591741DE239D25640005C7AD /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		591741E2239D32D00005C7AD /* LoaderTableViewCell+UIExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoaderTableViewCell+UIExtend.swift"; sourceTree = "<group>"; };
 		591741E6239D43550005C7AD /* Contacts+Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contacts+Query.swift"; sourceTree = "<group>"; };
+		593E3AF323AEB09400CD70F7 /* UITableView+Extend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extend.swift"; sourceTree = "<group>"; };
 		595311422398D733001A0EE3 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		595311452398D733001A0EE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		595311472398D733001A0EE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -433,6 +437,7 @@
 				59F64FB3239AE9F500F3AA9A /* String+Extend.swift */,
 				59F64FB7239BCCF900F3AA9A /* Enums.swift */,
 				59174198239BF6490005C7AD /* ContactsStaticMessages.swift */,
+				593E3AF323AEB09400CD70F7 /* UITableView+Extend.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -842,6 +847,7 @@
 				59AEC6EC239A0CC700EA4AB4 /* Contacts+BaseResponse.swift in Sources */,
 				591741E3239D32D00005C7AD /* LoaderTableViewCell+UIExtend.swift in Sources */,
 				59F64F97239ACCED00F3AA9A /* DetailsPresenter.swift in Sources */,
+				593E3AF423AEB09400CD70F7 /* UITableView+Extend.swift in Sources */,
 				59F64F70239ACCC400F3AA9A /* UpdateContactProtocols.swift in Sources */,
 				591741DA239D164D0005C7AD /* BaseTableViewCell+UIExtend.swift in Sources */,
 				591741D6239D14580005C7AD /* BaseTableViewCell+Extend.swift in Sources */,
@@ -886,6 +892,7 @@
 				59F64F74239ACCC400F3AA9A /* UpdateContactInteractor.swift in Sources */,
 				591741D3239D13930005C7AD /* BaseCellDataModel.swift in Sources */,
 				591741E4239D32D00005C7AD /* LoaderTableViewCell+UIExtend.swift in Sources */,
+				593E3AF523AEB09400CD70F7 /* UITableView+Extend.swift in Sources */,
 				59AEC6E6239A0C7500EA4AB4 /* Contacts+Api.swift in Sources */,
 				59AEC6ED239A0CC700EA4AB4 /* Contacts+BaseResponse.swift in Sources */,
 				59F64F8C239ACCE300F3AA9A /* BaseInteractor.swift in Sources */,
@@ -932,6 +939,7 @@
 				59F64F75239ACCC400F3AA9A /* UpdateContactInteractor.swift in Sources */,
 				591741D4239D13930005C7AD /* BaseCellDataModel.swift in Sources */,
 				591741E5239D32D00005C7AD /* LoaderTableViewCell+UIExtend.swift in Sources */,
+				593E3AF623AEB09400CD70F7 /* UITableView+Extend.swift in Sources */,
 				59AEC6E7239A0C7500EA4AB4 /* Contacts+Api.swift in Sources */,
 				59AEC6EE239A0CC700EA4AB4 /* Contacts+BaseResponse.swift in Sources */,
 				59F64F8D239ACCE300F3AA9A /* BaseInteractor.swift in Sources */,

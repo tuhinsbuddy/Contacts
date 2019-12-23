@@ -11,9 +11,10 @@ import UIKit
 extension BaseTableViewCell {
     func setColors() {
         if #available(iOS 13.0, *) {
-            profileNameLbl.textColor = UIColor.label
+            profileNameLbl.textColor = .label
         } else {
             profileNameLbl.textColor = .titleTextColor
         }
+        profileImageSuperView.backgroundColor = .white
     }
 }

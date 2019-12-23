@@ -15,9 +15,16 @@ final class BaseTableViewCell: UITableViewCell {
     @IBOutlet weak var profileNameLbl: UILabel!
     @IBOutlet weak var favouriteSuperView: UIView!
     @IBOutlet weak var favouriteImageView: UIImageView!
+    @IBOutlet weak var selectContactBtn: UIButton!
+    public weak var delegate: BaseTableViewCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectContactBtn.setTitle(nil, for: .normal)
         setColors()
+        guard selectContactBtn.allTargets.isEmpty else {
+            return
+        }
+        selectContactBtn.addTarget(self, action: #selector(onClicked(sender:)), for: .touchUpInside)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

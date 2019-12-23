@@ -72,8 +72,16 @@
                             <constraint firstItem="oVs-eu-R5z" firstAttribute="centerY" secondItem="ozx-ZR-i16" secondAttribute="centerY" id="zMn-So-TKH"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dT1-pb-Viv">
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="148"/>
+                        <state key="normal" title="Button"/>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="dT1-pb-Viv" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="5oT-7z-0Bl"/>
+                    <constraint firstItem="dT1-pb-Viv" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="6hh-iZ-G70"/>
+                    <constraint firstItem="dT1-pb-Viv" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="8ff-fx-IgH"/>
+                    <constraint firstItem="dT1-pb-Viv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Aam-kr-VW3"/>
                     <constraint firstAttribute="trailing" secondItem="ozx-ZR-i16" secondAttribute="trailing" id="Ohn-xW-Zk8"/>
                     <constraint firstItem="ozx-ZR-i16" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="bps-Ye-oMd"/>
                     <constraint firstItem="ozx-ZR-i16" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eHJ-00-fnW"/>
@@ -90,6 +98,7 @@
                 <outlet property="profileImageSuperView" destination="cWg-In-GzB" id="41d-E9-xsu"/>
                 <outlet property="profileImageView" destination="uRD-dT-U8K" id="Btu-o2-HIM"/>
                 <outlet property="profileNameLbl" destination="4AR-CA-Ztd" id="ol2-Gh-2R1"/>
+                <outlet property="selectContactBtn" destination="dT1-pb-Viv" id="rl0-kr-Ypz"/>
             </connections>
             <point key="canvasLocation" x="123.18840579710145" y="186.16071428571428"/>
         </tableViewCell>

@@ -29,16 +29,13 @@ extension BaseViewController {
                         return UITableViewCell()
             }
             cellObject.selectionStyle = .none
-            cellObject.setup(with: dataC.sectionRow[index.row])
+            cellObject.delegate = self
+            cellObject.setup(with: dataC.sectionRow[index.row], andIndex: index)
             return cellObject
         }
     }
 }
 extension BaseViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let presenter = presenterOutput, !presenter.tableData.isEmpty else { return }
-        presenter.selectData(for: indexPath)
-    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let presenter = presenterOutput, !presenter.tableData.isEmpty else { return 50 }
         switch presenter.tableData[indexPath.section].cellType {
@@ -71,13 +68,13 @@ extension BaseViewController: UITableViewDataSource {
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         guard let presenter = presenterOutput,
-            !presenter.sectionHeaders.isEmpty else { return 1 }
-        return presenter.sectionHeaders.count
+            !presenter.tableData.isEmpty else { return 1 }
+        return presenter.tableData.count
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let presenter = presenterOutput,
-            !presenter.sectionHeaders.isEmpty else { return nil }
-        return presenter.sectionHeaders[section]
+            !presenter.tableData.isEmpty, let cellData = presenter.tableData[section].data as? BaseCellDataModel else { return nil }
+        return cellData.sectionHeader
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let presenter = presenterOutput,
@@ -89,10 +86,10 @@ extension BaseViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return createCellForTable(withTableView: tableView, withIndex: indexPath)
     }
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return nil
-    }
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return nil
+}
+extension BaseViewController: BaseTableViewCellDelegate {
+    func didSelectContact(sender on: UIButton, withIndex index: IndexPath) {
+        guard let presenter = presenterOutput, !presenter.tableData.isEmpty, let indexPath = baseTableView.getIndex(fromSender: on) else { return }
+        presenter.selectData(for: indexPath)
     }
 }
